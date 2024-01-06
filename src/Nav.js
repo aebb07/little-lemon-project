@@ -1,18 +1,34 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Nav.css';
 
 const Nav = () => {
     return (
-        <div>
+        <div className="container">
             <div className="logo">
-                <img src="Logo.jpg" alt="Little Lemon Logo" />
+                <Link to="/">
+                    <img src="Logo.svg" alt="Little Lemon Logo" />
+                </Link>
             </div>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="./About">About</a></li>
-                    <li><a href="./Menu">Menu</a></li>
-                    <li><a href="./Reservations">Reservations</a></li>
-                    <li><a href="./OrderOnline">Order Online</a></li>
-                    <li><a href="./Login">Login</a></li>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/About">About</Link>
+                    </li>
+                    <li>
+                        <Link to="/Menu">Menu</Link>
+                    </li>
+                    <li>
+                        <Link to="/Reservations">Reservations</Link>
+                    </li>
+                    <li>
+                        <Link to="/OrderOnline">Order Online</Link>
+                    </li>
+                    <li>
+                        <Link to="/Login">Login</Link>
+                    </li>
                 </ul>
         </div>
     );

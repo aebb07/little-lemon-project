@@ -1,0 +1,47 @@
+/* About.css */
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .about-content {
+    max-width: 50%;
+  }
+  
+  .about-title {
+    font-family: 'Markazi Text';
+    color: #f4ce14;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .about-subtitle {
+    font-family: 'Markazi Text';
+    color: #333;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  
+  .about-description {
+    font-family: 'Karla';
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .about-images {
+    max-width: 40%;
+  }
+  
+  .about-images img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  

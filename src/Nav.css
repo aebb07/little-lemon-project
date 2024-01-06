@@ -1,0 +1,61 @@
+/* Nav.css */
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+  }
+  
+  .logo {
+    max-width: 100px;
+    margin-right: 5vw;
+    
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 5vw;
+  }
+  
+  li {
+    font-family: 'Markazi Text', serif;
+    font-weight: 500;
+    margin-right: 30px;
+    font-size: 1.5rem;
+  }
+  
+ li:last-child {
+    margin-right: 0;
+  }
+  
+  li a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  li a:hover {
+    color: #ee9972;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+  
+    .logo,
+    ul {
+      margin: 0;
+    }
+  
+    .logo {
+      margin-bottom: 10px;
+    }
+  }
+  

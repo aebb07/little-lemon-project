@@ -1,0 +1,31 @@
+/* Footer.css */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #edefee;
+    padding: 20px;
+  }
+  
+  .footer img {
+    max-width: 100px;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section li {
+    margin: 5px 0;
+  }
+  

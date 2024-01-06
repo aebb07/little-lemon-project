@@ -1,0 +1,54 @@
+/* OrderOnline.css */
+
+.order-online-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .menu-item {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .menu-item img {
+    max-width: 150px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .menu-item-details {
+    padding: 10px;
+    background-color: #edefee;
+    flex-grow: 1;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  .menu-item-details h3 {
+    margin-top: 0;
+  }
+  
+  .menu-item-details p {
+    margin-bottom: 10px;
+  }
+  
+  .menu-item-details .price {
+    color: #ee9972;
+    font-weight: bold;
+  }
+  
+  .menu-item-details button {
+    background-color: #f4ce14;
+    color: #333;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .menu-item-details button:hover {
+    background-color: #ee9972;
+    color: #333;
+  }
+  

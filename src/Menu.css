@@ -1,0 +1,45 @@
+/* Menu.css */
+
+.menu {
+    padding: 20px;
+  }
+  
+  .menu-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .menu-title h2 {
+    font-size: 24px;
+  }
+  
+  .menu-cards {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .menu-card {
+    background-color: #edefee;
+    padding: 20px;
+    border-radius: 16px;
+    width: 30%; /* Ajusta según tus necesidades */
+  }
+  
+  .menu-card img {
+    width: 100%;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  
+  .menu-card h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .menu-card p {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
