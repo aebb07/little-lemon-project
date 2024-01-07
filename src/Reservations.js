@@ -120,15 +120,15 @@ const Reservations = () => {
       { time: '23:00', disabled: true },
     ];
 
-    const validatePartySize = (size) => {
+    /*const validatePartySize = (size) => {
 
       return size > 0 && size <= 6;
     };
     const validateDate = (date) => {
   
       return !isNaN(Date.parse(date));
-    };
-
+    };*/
+    
   return  (
     <div className="overlay" >
     <div className="reservation">
