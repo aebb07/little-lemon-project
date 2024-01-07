@@ -1,0 +1,25 @@
+/* Cart.css */
+.cart-link {
+    text-decoration: none;
+  }
+  
+  .cart-icon {
+    position: relative;
+    margin-right: 4vw;
+  }
+
+  .cart-icon img {
+    width: 90%;
+  }
+  
+  .item-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 12px;
+    background-color: #f4ce14;
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 50%;
+  }
+  

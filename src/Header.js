@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 
@@ -9,7 +10,7 @@ const Header = ({ title, subtitle, description, buttonContent }) => {
       <h1 className="title-restaurant">{title}</h1>
       <p className="subtitle">{subtitle}</p>
       <p className='description-little-lemon'>{description}</p>
-      <button>{buttonContent}</button>
+      <Link to="/Reservations" className="button">{buttonContent}</Link>
     </div>
     <div className="hero-image">
       <img src="restauranfood.jpg" alt="Hero" />

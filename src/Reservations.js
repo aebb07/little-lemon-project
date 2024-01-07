@@ -37,14 +37,12 @@ const TimeSlider = ({ timeSlots, visibleSlots, onSelectTime }) => {
 };
 
 
-const Reservations = (props) => {
+const Reservations = () => {
   const [partySize, setPartySize] = useState(2); // Default party size
   const [selectedDate, setSelectedDate] = useState(null);
-  const [isVegan, setIsVegan] = useState(false);
-  const [isCeliac, setIsCeliac] = useState(false);
   const [message, setMessage] = useState('');
   const [selectedTime, setSelectedTime] = useState(null);
-  const {closeModal} = props;
+  const [occasion, setOccasion] = useState('Birthday');
 
   const [isPartySizeValid, setIsPartySizeValid] = useState(true);
   const [isDateValid, setIsDateValid] = useState(true);
@@ -64,14 +62,6 @@ const Reservations = (props) => {
     setIsDateValid(newDate !== null && newDate !== '');
   };
 
-  const handleVeganChange = () => {
-    setIsVegan(!isVegan);
-  };
-
-  const handleCeliacChange = () => {
-    setIsCeliac(!isCeliac);
-  };
-
   const handleMessageChange = (e) => {
     const newMessage = e.target.value;
     setMessage(newMessage);
@@ -84,16 +74,25 @@ const Reservations = (props) => {
       setIsTimeValid(true);
     };
 
-    const handleOverlayClick = (e) => {
-      if (e.target.classList.contains('overlay')) {
-        props.closeModal();
-      }
+
+    const handleOccasionChange = (e) => {
+      setOccasion(e.target.value);
     };
 
+
     const handleReservationSubmit = () => {
+
+      setIsPartySizeValid(partySize > 0 && partySize <= 6);
+      setIsDateValid(selectedDate !== null && selectedDate !== '');
+      setIsTimeValid(selectedTime !== null);
+      setIsMessageValid(message.length <= 250);
+
       if (isPartySizeValid && isDateValid && isTimeValid && isMessageValid) {
         console.log('Reservation Received');
-        props.closeModal();
+        console.log('Party Size:', partySize);
+        console.log('Selected Time:', selectedTime);
+        console.log('Occasion:', occasion);
+        console.log('Message:', message);
       } else {
         console.log('Invalid form. Please complete all fields correctly.');
       }
@@ -130,15 +129,12 @@ const Reservations = (props) => {
       return !isNaN(Date.parse(date));
     };
 
-  return (
-    <div className={`overlay ${ props.isModalOpen ? 'visible' : ''}`}  onClick={handleOverlayClick}>
+  return  (
+    <div className="overlay" >
     <div className="reservation">
-      <button className="close-btn" onClick={closeModal}>
-        &#x2715;
-      </button>
       <h2 data-testid="reservation-heading">Reservations</h2>
       <form>
-        <label htmlFor="partySize">Party Size:</label>
+        <label htmlFor="partySize" className={!isPartySizeValid ? 'error' : ''}>Party Size:</label>
         <input
           type="range"
           id="partySize"
@@ -147,12 +143,28 @@ const Reservations = (props) => {
           max={6}
           value={partySize}
           onChange={handlePartySizeChange}
+          required
+          className={!isPartySizeValid ? 'error' : ''}
         />
         <span>{partySize} People</span>
+        <span className="error-message">
+          {!isPartySizeValid && 'Party size is required (1-6).'}
+        </span>
+
 
         <div className="date-label">
-          <label htmlFor="date">Select Date:</label>
-          <input type="date" id="date" name="date" onChange={handleDateChange} />
+          <label htmlFor="date" className={!isDateValid ? 'error' : ''}>Select Date:</label>
+          <input 
+            type="date" 
+            id="date" 
+            name="date" 
+            onChange={handleDateChange} 
+            required 
+            className={!isDateValid ? 'error' : ''} 
+          />
+          <span className="error-message">
+            {!isDateValid && 'Date is required.'}
+          </span>
         </div>
 
         <div className="time-slot-container">
@@ -162,33 +174,55 @@ const Reservations = (props) => {
           visibleSlots={4}
           onSelectTime={handleSelectTime} />
           {selectedTime && <p>Selected Time: {selectedTime}</p>}
+          <span className="error-message">
+            {!isTimeValid && 'Time is required.'}
+          </span>
         </div>
 
-        <div>
-          <label>
-            <input type="checkbox" checked={isVegan} onChange={handleVeganChange} />
-            Vegan
-          </label>
-          <label>
-            <input type="checkbox" checked={isCeliac} onChange={handleCeliacChange} />
-            Celiac
-          </label>
-        </div>
+        <div className="occasion-container">
+            <label htmlFor="occasion" className={!occasion ? 'error' : ''}>Occasion:</label>
+            <select 
+              id="occasion" 
+              name="occasion" 
+              value={occasion} 
+              onChange={handleOccasionChange} 
+              required 
+              className={!occasion ? 'error' : ''}
+            >
+              <option value="Birthday">Birthday</option>
+              <option value="Anniversary">Anniversary</option>
+              <option value="Engagement">Engagement</option>
+            </select>
+            <span className="error-message">
+              {!occasion && 'Occasion is required.'}
+            </span>
+          </div>
 
         <div className="additional-container">
           <label htmlFor="message">Additional Message:</label>
-          <textarea id="message" name="message" value={message} onChange={handleMessageChange} maxLength={250} />
+          <textarea 
+            id="message" 
+            name="message" 
+            value={message} 
+            onChange={handleMessageChange} 
+            maxLength={250} 
+            required 
+            className={!isMessageValid ? 'error' : ''}
+            />
+          <span className="error-message">
+            {!isMessageValid && 'Message is required (max 250 characters).'}
+          </span>
         </div>
 
         <div className="button-container">
-          <button className="button-reservation" type="button" onClick={handleReservationSubmit} aria-label="Make a reservation">
+          <button className="button-reservation" type="button" onClick={handleReservationSubmit} aria-label="Make a reservation" disabled={!isPartySizeValid || !isDateValid || !isTimeValid || !isMessageValid}>
             Make a Reservation
           </button>
         </div>
       </form>
     </div>
     </div>
-  );
+  )
 };
 
 export default Reservations;

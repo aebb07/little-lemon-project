@@ -1,31 +1,99 @@
 /* Footer.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #edefee;
-    padding: 20px;
-  }
-  
+  display: flex;
+  justify-content: space-around;
+  background-color: #edefee;
+  padding-top: 70px;
+  padding-left: 150px;
+  padding-right: 70px;
+  padding-bottom: 70px;
+  margin-top: auto;
+}
+
+.footer img {
+  max-width: 170px;
+  cursor: pointer;
+  margin-left: 100px;
+}
+
+.footer-section  {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+}
+
+.footer-section h3 {
+  font-family: 'Karla';
+  font-size: 18px;
+  font-weight:700;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.doormat-links a {
+  margin: 5px 0;
+  color: #333;
+  font-family: 'Karla';
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none !important;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.doormat-links a:hover {
+  color: #EE9972;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-section p {
+  margin: 5px 0;
+  color: #555;
+  font-family: 'karla';
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.footer-section div {
+  margin-top: 10px;
+}
+
+.footer-section svg {
+  font-size: 24px;
+  color: #495e57;
+  cursor: pointer;
+}
+
+.footer-section svg:hover {
+  color: #EE9972;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+@media (max-width: 768px) {
   .footer img {
-    max-width: 100px;
+    max-width: 100%;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
-  
-  .footer-section {
-    text-align: center;
-  }
-  
-  .footer-section h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section li {
+
+  .doormat-links a {
     margin: 5px 0;
+    color: #333;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none !important;
+    text-align: left;
   }
-  
+}

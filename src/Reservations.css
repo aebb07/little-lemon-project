@@ -1,19 +1,25 @@
 /* Reservation.css */
 
 .reservation {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 400px;
-  width: 100%;
-  padding: 40px;
-  background-color: #edefee;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
-  border-radius: 16px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  background-color: #edefee;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 40px;
+  box-sizing: border-box;
+  margin: 90px;
+  }
+
+  .overlay {
+    background-color: #495E57;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
   }
 
   .reservation h2 {
@@ -23,20 +29,6 @@
     font-weight: 400;
   }
 
-  .overlay.visible {
-    display: block !important;;
-  }
-
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9998;
-  }
-  
   label {
     display: block;
     margin-bottom: 10px;
@@ -170,13 +162,35 @@
     color: #333;
   }
 
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    border: none;
-    background: none;
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
   }
   
+  select:focus {
+    outline: none;
+    border-color: #ee9972;
+  }
+
+  select:disabled {
+    background-color: #ee9972;
+  }
+
+  option  {
+    font-family: 'Karla';
+    font-size: 18px;
+  }
+
+  .error {
+    color: red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+  }

@@ -1,34 +1,49 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBicycle } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import './Menu.css';
 
 const Menu = () => {
   return (
-    <div className="menu">
+    <div id="menu-section" className="menu">
       <div className="menu-title">
-        <h2>Specials</h2>
-        <button>Online Menu</button>
+        <h2>This weeks Specials!</h2>
+        <Link to="/OrderOnline" className="button">Online Menu</Link>
       </div>
       <div className="menu-cards">
         <div className="menu-card">
           <img src="greek salad.jpg" alt="Greek Salad" />
-          <h3>Greek Salad</h3>
-          <p style={{ color: '#ee9972' }}>Price: $10.99</p>
-          <p>Description of Dish 1.</p>
-          <p>Order a delivery</p>
+            <div className="card-content">
+                <div className="title-price-container">
+                  <h3>Greek Salad</h3>
+                  <p className="price">Price: $10.99</p>
+                </div>
+              <p className="description-menu">Famous Greek salad of crispy lettuce, peppers, olives, and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.</p>
+              <p className="order-delivery"><a href='/OrderOnline'>Order a delivery <FontAwesomeIcon icon={faBicycle} /></a></p>
+            </div>
         </div>
         <div className="menu-card">
           <img src="bruchetta.svg" alt="Bruchetta" />
-          <h3>Bruchetta</h3>
-          <p style={{ color: '#ee9972' }}>Price: $12.99</p>
-          <p>Description of Dish 2.</p>
-          <p>Order a delivery</p>
+            <div className="card-content">
+                <div className="title-price-container">
+                  <h3>Bruchetta</h3>
+                  <p className="price">Price: $12.99</p>
+                </div>
+              <p className="description-menu-2">Our bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.</p>
+              <p className="order-delivery"><a href='/OrderOnline'>Order a delivery <FontAwesomeIcon icon={faBicycle} /></a></p>
+            </div>
         </div>
         <div className="menu-card">
-          <img src="lemon dessert.jpg" alt="Lemon Dessert" />
-          <h3>Lemon Dessert</h3>
-          <p style={{ color: '#ee9972' }}>Price: $15.99</p>
-          <p>Description of Dish 3.</p>
-          <p>Order a delivery</p>
+          <img className="lemon-dessert" src="lemon dessert.jpg" alt="Lemon Dessert" />
+            <div className="card-content">
+                <div className="title-price-container">
+                  <h3>Lemon Dessert</h3>
+                  <p className="price">Price: $15.99</p>
+                </div>
+              <p className="description-menu">This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.</p>
+              <p className="order-delivery"><a href='/OrderOnline'>Order a delivery <FontAwesomeIcon icon={faBicycle} /></a></p>
+            </div>
         </div>
       </div>
     </div>

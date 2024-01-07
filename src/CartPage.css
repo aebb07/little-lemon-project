@@ -1,0 +1,145 @@
+/* CartPage.css */
+
+.cart-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    background-color: #edefee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+    box-sizing: border-box;
+    margin: 90px;
+    min-width: 800px;
+    max-height: 1200vh;
+  }
+  
+  .cart-heading {
+    font-family: 'Markazi Text';
+    font-size: 40px;
+    text-align: center;
+    font-weight: 400;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .cart-item .item-details {
+    padding: 10px;
+    background-color: #edefee;
+    flex-grow: 1;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-details h3 {
+    font-family: 'Karla';
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  .cart-item p {
+    margin: 0;
+    font-family: 'Karla';
+    font-weight: 400;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .cart-item p:last-child {
+    margin-bottom: 10px;
+  }
+
+  .cart-item img {
+    max-width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    margin-right: 15px;
+  }
+  
+  .remove-button {
+    font-size: 12px;
+    background-color: #EE9972;
+    color: #edefee;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  .remove-button:hover {
+    background-color: #FBDABB;
+  }
+  
+  .total-payment-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+  .total {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-left: 10px;
+    font-family: 'Markazi Text';
+  }
+  
+  .payment-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .payment-info h3 {
+    margin-right: 10px;
+  }
+  
+  .payment-info svg {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #495e57;
+  }
+
+  .button-pay {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .pay-button {
+    background-color: #f4ce14;
+    color: #333;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: 'karla';
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .pay-button:hover {
+    background-color: #ee9972;
+    color: #333;
+  }

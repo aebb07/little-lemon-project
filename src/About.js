@@ -8,9 +8,10 @@ const About = () => {
         <h2 className="about-title">Little Lemon</h2>
         <h3 className="about-subtitle">Chicago</h3>
         <p className="about-description">
-          We are a family-owned Mediterranean restaurant, bringing the flavors of the region
-          to the heart of Chicago. At Little Lemon, we are passionate about providing
-          a delightful dining experience with a modern twist on traditional recipes.
+        Little Lemon is owned by two Italian brothers, Mario and Adrian, who moved to the United States to pursue their shared dream of owning a restaurant.
+        </p>
+        <p className="about-description">
+        To craft the menu, Mario relies on family recipes and his experience as a chef in Italy. Adrian does all the marketing for the restaurant and led the effort to expand the menu beyond classic Italian to incorporate additional cuisines from the Mediterranean region.
         </p>
       </div>
       <div className="about-images">

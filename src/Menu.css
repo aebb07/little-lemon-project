@@ -2,29 +2,40 @@
 
 .menu {
     padding: 20px;
+    margin-top: 120px;
+    margin-bottom: 120px;
   }
   
   .menu-title {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    margin-bottom: 50px;
   }
   
   .menu-title h2 {
-    font-size: 24px;
+    font-size: 64px;
+    font-family: 'Markazi Text';
+    font-weight: 500;
+    color: #333;
   }
   
   .menu-cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
   .menu-card {
     background-color: #edefee;
-    padding: 20px;
     border-radius: 16px;
-    width: 30%; /* Ajusta según tus necesidades */
+    width: 30%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   
   .menu-card img {
@@ -32,14 +43,87 @@
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
   }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .title-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
   .menu-card h3 {
     margin-top: 10px;
     margin-bottom: 5px;
+    font-family: 'Karla';
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
   }
   
-  .menu-card p {
+  .description-menu, .order-delivery, .description-menu-2 {
     margin-bottom: 10px;
     color: #555;
+    font-family: 'Karla';
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .description-menu-2 {
+    margin-bottom: 41px;
   }
   
+  .price {
+    font-family: 'Karla';
+    font-size: 16px;
+    font-weight: 500;
+    color: #EE9972;
+  }
+
+  .lemon-dessert {
+    max-height: 241px;
+    object-fit: cover;
+  }
+
+  .order-delivery {
+    font-weight: 500;
+  }
+
+  .order-delivery a {
+    text-decoration: none;
+    color: #333!important;
+    cursor: pointer;
+  }
+
+  .svg-inline--fa.fa-bicycle {
+    color: #495E57;
+    margin-left: 5px;
+  }
+
+  .button {
+    background-color: #f4ce14;
+    color: #333;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: 'karla';
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    background-color: #ee9972;
+    color: #333;
+  }
+
+  @media (max-width: 768px) {
+    .menu-card {
+      width: 100%;
+    }
+  }

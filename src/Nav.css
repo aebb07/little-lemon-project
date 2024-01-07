@@ -2,7 +2,7 @@
 
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 30px;
   }
@@ -13,12 +13,16 @@
     
   }
 
+  .logo img {
+    margin-left: 5vw;
+  }
+
   ul {
     list-style: none;
     padding: 0;
     display: flex;
     align-items: center;
-    margin-left: 5vw;
+    margin-left: 50vw;
   }
   
   li {
@@ -39,6 +43,25 @@
 
   li a:hover {
     color: #ee9972;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .button-login-nav {
+    background-color: #f4ce14;
+    color: #333;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: 'karla';
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .button-login-nav:hover {
+    background-color: #ee9972;
+    color: #333;
   }
 
   @media (max-width: 768px) {

@@ -1,37 +1,72 @@
-import React, { useState } from 'react';
-import './Login.css'; // No olvides crear este archivo para los estilos
+import React, { useState, useEffect } from 'react';
+import './Login.css';
 
-const Login = () => {
+const Login = ({ closeModal, isModalOpen }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [formErrors, setFormErrors] = useState({ username: '', password: '' });
+
+  const resetInputs = () => {
+    setUsername('');
+    setPassword('');
+    setFormErrors({ username: '', password: '' });
+  };
+
+    useEffect(() => {
+      if (!isModalOpen) {
+        resetInputs();
+      }
+    }, [isModalOpen]);
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
+    setFormErrors({ ...formErrors, username: '' });
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+    setFormErrors({ ...formErrors, password: '' });
   };
 
   const handleLoginSubmit = () => {
-    // Aquí iría la lógica de autenticación, por ejemplo, hacer una solicitud a un servidor
-    console.log(`Usuario: ${username}, Contraseña: ${password}`);
+    if (!username) {
+      setFormErrors({ ...formErrors, username: 'Username is required' });
+      return;
+    }
+
+    if (!password) {
+      setFormErrors({ ...formErrors, password: 'Password is required' });
+      return;
+    }
+
+    console.log(`User: ${username}, Password: ${password}`);
+    closeModal();
   };
 
   return (
-    <div className="login">
-      <h2>Login</h2>
-      <form>
-        <label htmlFor="username">Username:</label>
-        <input type="text" id="username" name="username" value={username} onChange={handleUsernameChange} />
+    <div className={`overlay-login ${isModalOpen ? 'active' : ''}`}>
+    <div className={`login ${isModalOpen ? 'modal-open' : ''}`}>
+      {isModalOpen && (
+        <div className="modal-background" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h2>Login</h2>
+            <form>
+              <label htmlFor="username">Username:</label>
+              <input type="text" id="username" name="username" value={username} onChange={handleUsernameChange} required/>
+              {formErrors.username && <p className="error-message">{formErrors.username}</p>}
 
-        <label htmlFor="password">Password:</label>
-        <input type="password" id="password" name="password" value={password} onChange={handlePasswordChange} />
+              <label htmlFor="password">Password:</label>
+              <input type="password" id="password" name="password" value={password} onChange={handlePasswordChange} required />
+              {formErrors.password && <p className="error-message">{formErrors.password}</p>}
 
-        <button type="button" onClick={handleLoginSubmit}>
-          Login
-        </button>
-      </form>
+              <button type="button" onClick={handleLoginSubmit}>
+                Login
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+    </div>
     </div>
   );
 };
