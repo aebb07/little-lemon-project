@@ -54,6 +54,9 @@ const Nav = () => {
                         <Link to="/Reservations">Reservations</Link>
                     </li>
                     <li>
+                        <Link to="/OrderOnline">Order Online</Link>
+                    </li>
+                    <li>
                         <button className="button-login-nav" onClick={openLoginModal}>Login</button>
                     </li>
                 </ul>
