@@ -6,8 +6,8 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 20px;
     background-color:#495e57 ;
+    width: 100%;
   }
   
   .hero-content {
@@ -63,7 +63,6 @@
   .hero-image {
     max-width: 50%;
     text-align: center;
-    margin-right: 200px;
   }
   
   .hero-image img {

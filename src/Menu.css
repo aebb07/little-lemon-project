@@ -4,6 +4,7 @@
     padding: 20px;
     margin-top: 120px;
     margin-bottom: 120px;
+    width: 100%;
   }
   
   .menu-title {
@@ -23,11 +24,12 @@
   
   .menu-cards {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;;
     gap: 20px;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: stretch;
   }
   
   .menu-card {
@@ -36,12 +38,17 @@
     width: 30%;
     box-sizing: border-box;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
   
   .menu-card img {
     width: 100%;
+    height: auto;
+    max-height: 200px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
+    object-fit: cover;
   }
 
   .card-content {
@@ -90,6 +97,7 @@
 
   .order-delivery {
     font-weight: 500;
+    margin-top: auto;
   }
 
   .order-delivery a {
@@ -125,5 +133,14 @@
   @media (max-width: 768px) {
     .menu-card {
       width: 100%;
+    }
+
+    .menu-title {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .menu {
+      margin-top: 5%;
     }
   }

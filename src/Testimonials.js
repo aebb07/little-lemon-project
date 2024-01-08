@@ -46,7 +46,7 @@ const Testimonials = () => {
                 <FontAwesomeIcon icon={faStar} className="star-icon" />
                 <FontAwesomeIcon icon={faStar} className="star-icon" />
             </div>
-            <img className="testimonial-image" src={testimonial.imageUrl} alt={testimonial.author} />
+            <img className="testimonial-image" src={testimonial.imageUrl} alt={`${testimonial.author} testimonial`}/>
             <p className="quote">{testimonial.quote}</p>
             <p className="author">- {testimonial.author}</p>
           </div>

@@ -8,13 +8,15 @@ const Header = ({ title, subtitle, description, buttonContent }) => {
   <header className="hero">
     <div className="hero-content">
       <h1 className="title-restaurant">{title}</h1>
-      <p className="subtitle">{subtitle}</p>
+      <h2 className="subtitle">{subtitle}</h2>
       <p className='description-little-lemon'>{description}</p>
-      <Link to="/Reservations" className="button">{buttonContent}</Link>
+      <Link to="/Reservations" className="button">
+        {buttonContent}
+      </Link>
     </div>
-    <div className="hero-image">
+    <figure className="hero-image">
       <img src="restauranfood.jpg" alt="Hero" />
-    </div>
+    </figure>
   </header>
   );
 };

@@ -9,6 +9,7 @@
     padding-right: 50px;
     margin-top: 120px;
     margin-bottom: 180px;
+    width: 100%;
   }
   
   .about-content {
@@ -46,7 +47,6 @@
     position: relative;
     max-width: 40%;
     text-align: center;
-    margin-right: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,4 +62,33 @@
     position: absolute;
     top: 50%;
     right: 50%;
+  }
+
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      padding: 20px;
+      margin-top: 60px;
+      margin-bottom: 80px;
+    }
+  
+    .about-content {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .about-images {
+      max-width: 100%;
+      margin: 5%;
+    }
+  
+    .about-images img {
+      width: 100%;
+      max-width: none;
+    }
+  
+    .about-images img:nth-child(2) {
+      position: static;
+    }
   }

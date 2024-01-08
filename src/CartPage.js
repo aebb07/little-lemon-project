@@ -22,14 +22,14 @@ const CartPage = () => {
 
   return (
     <div className="overlay">
-    <div className="cart-page-container">
+    <section className="cart-page-container">
       <h2 className="cart-heading">Your Cart</h2>
       {cart.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
         <div>
           {cart.map((item) => (
-            <div key={item.id} className="cart-item">
+            <article key={item.id} className="cart-item">
               <img src={item.img} alt={item.name} style={{ width: '150px', height: '145px', objectFit: 'cover' }} />
               <div className="item-details">
                 <h3>{item.name}</h3>
@@ -38,15 +38,15 @@ const CartPage = () => {
                 <p>Amount: {item.quantity}</p>
                 <button className="remove-button" onClick={() => handleRemoveFromCart(item)}>X</button>
               </div>
-            </div>
+            </article>
           ))}
           <div className="total-payment-info">
-          <div className="payment-info">
-            <FontAwesomeIcon icon={faCreditCard} />
-            <FontAwesomeIcon icon={faPaypal} />
-            <FontAwesomeIcon icon={faApplePay} />
-            <FontAwesomeIcon icon={faGooglePay} />
-          </div>
+            <div className="payment-info">
+              <FontAwesomeIcon icon={faCreditCard} />
+              <FontAwesomeIcon icon={faPaypal} />
+              <FontAwesomeIcon icon={faApplePay} />
+              <FontAwesomeIcon icon={faGooglePay} />
+            </div>
           <div className="total">
             <p>Total: ${getTotalPrice()}</p>
           </div>
@@ -56,7 +56,7 @@ const CartPage = () => {
             </div>
         </div>
       )}
-    </div>
+    </section>
     </div>
   );
 };

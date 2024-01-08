@@ -14,6 +14,7 @@
   padding-right: 70px;
   padding-bottom: 70px;
   margin-top: auto;
+  width: 100%;
 }
 
 .footer img {
@@ -79,12 +80,23 @@
 
 
 @media (max-width: 768px) {
+
+  .footer {
+    padding: 20px;
+    flex-direction: column;
+  }
+
   .footer img {
     max-width: 100%;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
     display: block;
+  }
+
+  .footer-section {
+    padding: 10px;
+    text-align: center;
   }
 
   .doormat-links a {
@@ -95,5 +107,16 @@
     font-size: 16px;
     text-decoration: none !important;
     text-align: left;
+  }
+
+  .doormat-links a {
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  .footer-section div {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
   }
 }

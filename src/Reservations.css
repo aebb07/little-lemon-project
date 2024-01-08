@@ -194,3 +194,15 @@
     font-size: 12px;
     margin-top: 4px;
   }
+
+  @media (max-width: 768px) {
+    .reservation {
+      max-width: 90%;
+      margin: 20px;
+    }
+
+    form {
+      max-width: 100%;
+    }
+
+  }

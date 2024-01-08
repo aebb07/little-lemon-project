@@ -45,28 +45,28 @@ const Login = ({ closeModal, isModalOpen }) => {
 
   return (
     <div className={`overlay-login ${isModalOpen ? 'active' : ''}`}>
-    <div className={`login ${isModalOpen ? 'modal-open' : ''}`}>
       {isModalOpen && (
-        <div className="modal-background" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h2>Login</h2>
-            <form>
-              <label htmlFor="username">Username:</label>
-              <input type="text" id="username" name="username" value={username} onChange={handleUsernameChange} required/>
-              {formErrors.username && <p className="error-message">{formErrors.username}</p>}
+      <div className="login modal-open">
+          <div className="modal-background" onClick={closeModal}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <h2>Login</h2>
+              <form>
+                <label htmlFor="username">Username:</label>
+                <input type="text" id="username" name="username" value={username} onChange={handleUsernameChange} required/>
+                {formErrors.username && <p className="error-message">{formErrors.username}</p>}
 
-              <label htmlFor="password">Password:</label>
-              <input type="password" id="password" name="password" value={password} onChange={handlePasswordChange} required />
-              {formErrors.password && <p className="error-message">{formErrors.password}</p>}
+                <label htmlFor="password">Password:</label>
+                <input type="password" id="password" name="password" value={password} onChange={handlePasswordChange} required />
+                {formErrors.password && <p className="error-message">{formErrors.password}</p>}
 
-              <button type="button" onClick={handleLoginSubmit}>
-                Login
-              </button>
-            </form>
+                <button type="button" onClick={handleLoginSubmit}>
+                  Login
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
-      )}
-    </div>
+      </div>
+    )}
     </div>
   );
 };

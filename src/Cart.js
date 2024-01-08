@@ -11,9 +11,9 @@ const Cart = () => {
 
   return (
     <Link to="/cart" className="cart-link">
-      <div className="cart-icon">
+      <div className="cart-icon" role="button" aria-label="Open Shopping Cart">
         <img src="basket .svg" alt="Shopping Cart" />
-        {totalCount > 0 && <span className="item-count">{totalCount}</span>}
+        {totalCount > 0 && <span className="item-count" aria-live="polite">{totalCount}</span>}
       </div>
     </Link>
   );

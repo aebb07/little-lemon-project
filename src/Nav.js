@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Cart from './Cart';
 import Login from './Login';
@@ -7,6 +7,7 @@ import './Nav.css';
 const Nav = () => {
 
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const openLoginModal = () => {
       setIsLoginModalOpen(true);
@@ -14,6 +15,10 @@ const Nav = () => {
   
     const closeLoginModal = () => {
       setIsLoginModalOpen(false);
+    };
+
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
     const scrollToSection = (sectionId) => {
@@ -33,6 +38,24 @@ const Nav = () => {
         scrollToSection('menu-section');
       };
 
+      useEffect(() => {
+        const handleOutsideClick = (event) => {
+            const navContainer = document.querySelector('.container');
+            if (isMobileMenuOpen && navContainer && !navContainer.contains(event.target)) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        if (isMobileMenuOpen) {
+            document.addEventListener('click', handleOutsideClick);
+        }
+
+        return () => {
+            document.removeEventListener('click', handleOutsideClick);
+        };
+    }, [isMobileMenuOpen]);
+
+
     return (
         <div className="container">
             <div className="logo">
@@ -40,7 +63,10 @@ const Nav = () => {
                     <img src="Logo.svg" alt="Little Lemon Logo" />
                 </Link>
             </div>
-                <ul>
+                <div className={`mobile-menu-icon ${isMobileMenuOpen ? 'open' : ''}`} onClick={toggleMobileMenu}>
+                    <img src="menu-burger.svg" alt="Menu mobile" />
+                </div>
+                <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
                     <li>
                         <Link to="/" >Home</Link>
                     </li>
@@ -59,9 +85,13 @@ const Nav = () => {
                     <li>
                         <button className="button-login-nav" onClick={openLoginModal}>Login</button>
                     </li>
+                    <li>
+                        <Cart />
+                    </li>
+                    <li>
+                        <Login closeModal={closeLoginModal} isModalOpen={isLoginModalOpen} />
+                    </li>
                 </ul>
-                <Cart />
-                <Login closeModal={closeLoginModal} isModalOpen={isLoginModalOpen} />
         </div>
     );
 };

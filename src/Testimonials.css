@@ -6,6 +6,7 @@
     text-align: center;
     padding-top: 120px;
     padding-bottom: 120px;
+    width: 100%;
   }
   
   .testimonials-list {
@@ -67,4 +68,18 @@
     color: #F4ce14;
     margin-right: 5px;
 
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-list {
+      flex-wrap: wrap;
+    }
+  
+    .testimonial {
+      flex: 0 0 48%;
+    }
+  
+    .testimonials-title h2 {
+      font-size: 36px;
+    }
   }

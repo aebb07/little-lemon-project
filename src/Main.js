@@ -7,14 +7,14 @@ import About from './About';
 const Main = () => {
 
         return (
-        <div>
+        <main>
             <CallToAction />
             <Menu />
             <Testimonials />
         <section id="about-section">
             <About />
         </section>
-        </div>
+        </main>
 
         )
 }
